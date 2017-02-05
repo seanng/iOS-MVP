@@ -9,7 +9,7 @@ import NavItems from './NavItems';
 import Styles from './styles';
 
 // screens identified by the router
-import homepageScreen from '../Containers/homepage';
+import homepageScreen from '../Containers/Homepage';
 import LoginScreen from '../Containers/Login';
 
 /* **************************
@@ -17,13 +17,13 @@ import LoginScreen from '../Containers/Login';
 ***************************/
 
 class NavigationRouter extends Component {
-  render () {
+  render() {
     return (
       <Router>
-        <Scene key='drawer' component={NavigationDrawer} open={false}>
-          <Scene key='drawerChildrenWrapper' navigationBarStyle={Styles.navBar} titleStyle={Styles.title} leftButtonIconStyle={Styles.leftButton} rightButtonTextStyle={Styles.rightButton}>
-            <Scene initial key='homepage' component={PresentationScreen} title='Haven' renderLeftButton={NavItems.hamburgerButton} />
-            <Scene key='login' component={LoginScreen} title='Login' renderLeftButton={NavItems.hamburgerButton} />
+        <Scene key="drawer" component={NavigationDrawer} open={false}>
+          <Scene key="drawerChildrenWrapper" navigationBarStyle={Styles.navBar} titleStyle={Styles.title} leftButtonIconStyle={Styles.leftButton} rightButtonTextStyle={Styles.rightButton}>
+            <Scene initial key="homepage" component={homepageScreen} title="Haven" renderLeftButton={NavItems.hamburgerButton} />
+            <Scene key="login" component={LoginScreen} title="Login" renderLeftButton={NavItems.hamburgerButton} />
           </Scene>
         </Scene>
       </Router>

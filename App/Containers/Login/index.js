@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react'
+import React from 'react';
 import {
   View,
   ScrollView,
@@ -9,14 +9,15 @@ import {
   TouchableOpacity,
   Image,
   Keyboard,
-  LayoutAnimation
-} from 'react-native'
-import { connect } from 'react-redux'
-import Styles from './Styles/LoginScreenStyle'
-import {Images, Metrics} from '../Themes'
-import LoginActions from '../Redux/LoginRedux'
-import { Actions as NavigationActions } from 'react-native-router-flux'
-import I18n from 'react-native-i18n'
+  LayoutAnimation,
+} from 'react-native';
+import { connect } from 'react-redux';
+import { Actions as NavigationActions } from 'react-native-router-flux';
+import I18n from 'react-native-i18n';
+
+import { Images, Metrics } from '../../Themes';
+import LoginActions from '../../Redux/LoginRedux';
+import Styles from './styles';
 
 type LoginScreenProps = {
   dispatch: () => any,
