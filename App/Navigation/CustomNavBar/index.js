@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { Metrics, Images } from '../../Themes';
 import SearchBar from '../../Components/SearchBar';
-import SearchActions from '../../Redux/SearchRedux';
+// import SearchActions from '../../Redux/SearchRedux';
 import NavItems from '../NavItems';
 import styles from './styles';
 

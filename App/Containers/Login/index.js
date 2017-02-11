@@ -1,5 +1,4 @@
 // @flow
-
 import React from 'react';
 import {
   View,
@@ -16,7 +15,7 @@ import { Actions as NavigationActions } from 'react-native-router-flux';
 import I18n from 'react-native-i18n';
 
 import { Images, Metrics } from '../../Themes';
-import LoginActions from '../../Redux/LoginRedux';
+import LoginActions from '../../Redux/auth/LoginRedux';
 import Styles from './styles';
 
 type LoginScreenProps = {
@@ -173,7 +172,7 @@ class LoginScreen extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    fetching: state.login.fetching
+    fetching: state.login.fetching,
   }
 }
 

@@ -14,7 +14,7 @@ import styles from './styles';
 
 const HotelImages = Images.hotelImages;
 
-class ListviewExample extends React.Component {
+class Homepage extends React.Component {
   state: {
     dataSource: Object
   }
@@ -121,4 +121,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(ListviewExample);
+export default connect(mapStateToProps)(Homepage);
