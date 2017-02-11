@@ -6,7 +6,8 @@ import { Colors, Metrics } from '../../Themes'
 export default StyleSheet.create({
   container: {
     paddingTop: 70,
-    backgroundColor: Colors.background
+    backgroundColor: Colors.background,
+    height: Metrics.screenHeight,
   },
   form: {
     backgroundColor: Colors.snow,

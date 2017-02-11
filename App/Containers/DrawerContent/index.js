@@ -1,13 +1,18 @@
 // @flow
-
 import React, { Component } from 'react';
-import { View, ScrollView, Image, BackAndroid } from 'react-native';
+import {
+  Text,
+  View,
+  ScrollView,
+  BackAndroid,
+} from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 // import { Actions as NavigationActions } from 'react-native-router-flux';
 
 import { changeRoute } from '../../Redux/app/actions';
 import { Images } from '../../Themes';
+import Avatar from '../../Components/Avatar';
 import DrawerButton from '../../Components/DrawerButton';
 import styles from './styles';
 
@@ -70,17 +75,22 @@ class DrawerContent extends Component {
   }
 
   render () {
+    const { user } = this.props;
+    console.log(user);
     return (
       <ScrollView style={styles.container}>
-        <View>
-          <Image source={Images.logo} style={styles.logo} />
+        <View style={styles.profileWrapper}>
+          <Avatar src={user.avatarUrl} size={150} />
+          <Text style={styles.username}>{user.name}</Text>
         </View>
-        <DrawerButton text="Homepage" onPress={this.handlePressHomepage} />
-        <DrawerButton text="Payment" onPress={this.handlePressPayment} />
-        <DrawerButton text="Settings" onPress={this.handlePressSettings} />
-        <DrawerButton text="How it works" onPress={this.handlePressHowItWorks} />
-        <DrawerButton text="Previous bookings" onPress={this.handlePressPreviousBookings} />
-        <DrawerButton text="Text Us" onPress={this.handlePressTextUs} />
+        <View style={styles.drawerItemsWrapper}>
+          <DrawerButton text="Homepage" onPress={this.handlePressHomepage} />
+          <DrawerButton text="Payment" onPress={this.handlePressPayment} />
+          <DrawerButton text="Settings" onPress={this.handlePressSettings} />
+          <DrawerButton text="How it works" onPress={this.handlePressHowItWorks} />
+          <DrawerButton text="Previous bookings" onPress={this.handlePressPreviousBookings} />
+          <DrawerButton text="Text Us" onPress={this.handlePressTextUs} />
+        </View>
       </ScrollView>
     )
   }
