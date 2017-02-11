@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import { ScrollView, Image, BackAndroid } from 'react-native';
+import { View, ScrollView, Image, BackAndroid } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 // import { Actions as NavigationActions } from 'react-native-router-flux';
@@ -44,6 +44,11 @@ class DrawerContent extends Component {
     this.toggleDrawer();
   }
 
+  handlePressPayment = () => {
+    this.props.changeRoute('payment');
+    this.toggleDrawer();
+  }
+
   handlePressSettings = () => {
     this.props.changeRoute('settings');
     this.toggleDrawer();
@@ -54,7 +59,7 @@ class DrawerContent extends Component {
     this.toggleDrawer();
   }
 
-  handlePressPreviousBooking = () => {
+  handlePressPreviousBookings = () => {
     this.props.changeRoute('previousBookings');
     this.toggleDrawer();
   }
@@ -70,11 +75,12 @@ class DrawerContent extends Component {
         <View>
           <Image source={Images.logo} style={styles.logo} />
         </View>
-        <DrawerButton text='Homepage' onPress={this.handlePressHomepage} />
-        <DrawerButton text='Payment' onPress={this.handlePressSettings} />
-        <DrawerButton text='Settings' onPress={this.handlePressHowItWorks} />
-        <DrawerButton text='How it works' onPress={this.handlePressPreviousBooking} />
-        <DrawerButton text='Previous bookings' onPress={this.handlePressTextUs} />
+        <DrawerButton text="Homepage" onPress={this.handlePressHomepage} />
+        <DrawerButton text="Payment" onPress={this.handlePressPayment} />
+        <DrawerButton text="Settings" onPress={this.handlePressSettings} />
+        <DrawerButton text="How it works" onPress={this.handlePressHowItWorks} />
+        <DrawerButton text="Previous bookings" onPress={this.handlePressPreviousBookings} />
+        <DrawerButton text="Text Us" onPress={this.handlePressTextUs} />
       </ScrollView>
     )
   }
@@ -82,7 +88,8 @@ class DrawerContent extends Component {
 }
 
 DrawerContent.contextTypes = {
-  drawer: React.PropTypes.object
-}
+  drawer: React.PropTypes.object,
+  changeRoute: React.PropTypes.func,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(DrawerContent);

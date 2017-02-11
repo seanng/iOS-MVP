@@ -19,6 +19,7 @@ export default Creators
 
 export const INITIAL_STATE = Immutable({
   username: null,
+  loggedIn: false,
   user: { name: 'BOAWO', avatarUrl: '', userId: '' },
   error: null,
   fetching: false,

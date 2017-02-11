@@ -172,7 +172,7 @@ class LoginScreen extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    fetching: state.login.fetching,
+    fetching: state.auth.fetching,
   }
 }
 
