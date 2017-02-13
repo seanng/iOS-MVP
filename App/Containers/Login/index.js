@@ -48,7 +48,7 @@ class LoginScreen extends React.Component {
       username: '',
       password: '',
       visibleHeight: Metrics.screenHeight,
-      topLogo: { width: Metrics.screenWidth }
+      topLogo: { width: 150 }
     }
     this.isAttempting = false
   }
@@ -88,7 +88,7 @@ class LoginScreen extends React.Component {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
     this.setState({
       visibleHeight: Metrics.screenHeight,
-      topLogo: {width: Metrics.screenWidth}
+      topLogo: {width: 150}
     })
   }
 
@@ -161,7 +161,7 @@ class LoginScreen extends React.Component {
               </View>
             </TouchableOpacity>
             <TouchableOpacity style={Styles.loginButtonWrapper} onPress={NavigationActions.pop}>
-              <View style={Styles.loginButton}>
+              <View style={[Styles.loginButton, Styles.facebookButton]}>
                 <Text style={Styles.loginText}>Login with Facebook</Text>
               </View>
             </TouchableOpacity>

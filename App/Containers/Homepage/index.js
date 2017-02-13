@@ -4,9 +4,11 @@ import {
   Image,
   View,
   Text,
+  TouchableOpacity,
   ListView,
 } from 'react-native';
 import { connect } from 'react-redux';
+import { Actions as NavigationActions } from 'react-native-router-flux';
 
 import AlertMessage from '../../Components/AlertMessage';
 import { Images } from '../../Themes';
@@ -63,16 +65,18 @@ class Homepage extends React.Component {
   *************************************************************/
   renderRow (rowData) {
     return (
-      <View style={styles.row}>
-        <View style={styles.imageWrapper}>
-          <Image style={styles.image} source={rowData.image} />
-          <Text style={styles.hotelNameText}>{rowData.hotelName}</Text>
+      <TouchableOpacity onPress={() => { NavigationActions.hotelDetail=({ hotelDetails: rowData }); }}>
+        <View style={styles.row}>
+          <View style={styles.imageWrapper}>
+            <Image style={styles.image} source={rowData.image} />
+            <Text style={styles.hotelNameText}>{rowData.hotelName}</Text>
+          </View>
+          <View style={styles.detailWrapper}>
+            <Text style={styles.priceText}>$300/hour</Text>
+            <Text style={styles.ratingText}>{`Excellent ${rowData.rating}`}</Text>
+          </View>
         </View>
-        <View style={styles.detailWrapper}>
-          <Text style={styles.priceText}>$300/hour</Text>
-          <Text style={styles.ratingText}>{`Excellent ${rowData.rating}`}</Text>
-        </View>
-      </View>
+      </TouchableOpacity>
     )
   }
 

@@ -11,7 +11,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     borderBottomWidth: 1,
     borderColor: Colors.charcoal,
-    margin: 20,
+    marginTop: 20,
   },
   username: {
     fontWeight: '300',
