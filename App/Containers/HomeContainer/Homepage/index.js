@@ -65,7 +65,7 @@ class Homepage extends React.Component {
   *************************************************************/
   renderRow (rowData) {
     return (
-      <TouchableOpacity onPress={() => { NavigationActions.hotelDetail({ hotelDetails: rowData }); }}>
+      <TouchableOpacity onPress={() => { NavigationActions.hotelDetail({ hotelDetail: rowData }); }}>
         <View style={styles.row}>
           <View style={styles.imageWrapper}>
             <Image style={styles.image} source={rowData.image} />
