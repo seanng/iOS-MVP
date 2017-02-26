@@ -24,6 +24,7 @@ export const INITIAL_STATE = {
     userId: '123456',
     email: 'abc@gmail.com',
     name: 'Boawo Wang',
+    cardEndNumber: '1234',
     avatarUrl: 'https://www-tc.pbs.org/wnet/nature/files/2016/06/harambe-22-1.jpg',
   },
   error: null,

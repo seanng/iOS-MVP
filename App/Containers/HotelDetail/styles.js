@@ -8,7 +8,7 @@ export default StyleSheet.create({
     flex: 1,
   },
   scrollContainer: {
-    marginTop: 65,
+    marginTop: 64,
     flex: 1,
   },
   imageWrapper: {
@@ -50,6 +50,44 @@ export default StyleSheet.create({
     textAlign: 'center',
     color: Colors.snow,
     marginBottom: Metrics.smallMargin,
+  },
+  mapContainer: {
+    height: Metrics.screenWidth,
+    width: Metrics.screenWidth,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  map: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
+  bottomRow: {
+    height: 50,
+    flexDirection: 'row',
+  },
+  rowButton: {
+    flex: 1,
+  },
+  rowButtonView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderTopWidth: 1,
+    borderColor: Colors.black,
+  },
+  borderRight: {
+    borderRightWidth: 1,
+  },
+  rowButtonTopText: {
+    fontWeight: '200',
+    fontSize: 12,
+  },
+  rowButtonBottomText: {
+    fontWeight: '500',
+    fontSize: 16,
   },
   bookButtonView: {
     height: 50,
