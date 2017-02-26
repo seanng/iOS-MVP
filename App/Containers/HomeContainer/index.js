@@ -5,8 +5,8 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 
-import Homepage from '../Homepage';
-import LoginScreen from '../Login';
+import Homepage from './Homepage';
+// import LoginScreen from '../Login';
 
 import styles from './styles';
 
@@ -18,10 +18,6 @@ class HomeContainer extends Component {
   render() {
     const { homeRoute } = this.props;
     let content = <Homepage />;
-
-    if (homeRoute === 'login') {
-      content = <LoginScreen />;
-    }
 
     return (
       <View style={styles.container}>

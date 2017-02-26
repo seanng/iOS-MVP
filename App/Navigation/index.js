@@ -1,5 +1,4 @@
 // @flow
-
 import React, { Component } from 'react';
 import { Modal, Scene, Router } from 'react-native-router-flux';
 import NavigationDrawer from './NavigationDrawer';
@@ -10,6 +9,7 @@ import Styles from './styles';
 
 // screens identified by the router
 import HomeContainer from '../Containers/HomeContainer';
+import HotelDetail from '../Containers/HotelDetail';
 import Login from '../Containers/Login';
 
 
@@ -28,6 +28,7 @@ class NavigationRouter extends Component {
                 <Scene initial key="homeContainer" component={HomeContainer} title="Haven" renderLeftButton={NavItems.hamburgerButton} />
               </Scene>
             </Scene>
+            <Scene key="hotelDetail" component={HotelDetail} />
           </Scene>
           <Scene key="login" component={Login} hideNavBar direction="vertical" />
         </Scene>

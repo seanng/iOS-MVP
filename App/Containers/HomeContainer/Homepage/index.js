@@ -10,8 +10,8 @@ import {
 import { connect } from 'react-redux';
 import { Actions as NavigationActions } from 'react-native-router-flux';
 
-import AlertMessage from '../../Components/AlertMessage';
-import { Images } from '../../Themes';
+import AlertMessage from '../../../Components/AlertMessage';
+import { Images } from '../../../Themes';
 import styles from './styles';
 
 const HotelImages = Images.hotelImages;
@@ -65,7 +65,7 @@ class Homepage extends React.Component {
   *************************************************************/
   renderRow (rowData) {
     return (
-      <TouchableOpacity onPress={() => { NavigationActions.hotelDetail=({ hotelDetails: rowData }); }}>
+      <TouchableOpacity onPress={() => { NavigationActions.hotelDetail({ hotelDetails: rowData }); }}>
         <View style={styles.row}>
           <View style={styles.imageWrapper}>
             <Image style={styles.image} source={rowData.image} />
