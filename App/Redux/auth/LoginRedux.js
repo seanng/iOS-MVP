@@ -17,11 +17,18 @@ export default Creators
 
 /* ------------- Initial State ------------- */
 
-export const INITIAL_STATE = Immutable({
+export const INITIAL_STATE = {
   username: null,
+  loggedIn: false,
+  user: {
+    userId: '123456',
+    email: 'abc@gmail.com',
+    name: 'Boawo Wang',
+    avatarUrl: 'https://www-tc.pbs.org/wnet/nature/files/2016/06/harambe-22-1.jpg',
+  },
   error: null,
-  fetching: false
-})
+  fetching: false,
+};
 
 /* ------------- Reducers ------------- */
 

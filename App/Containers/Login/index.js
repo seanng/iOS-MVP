@@ -1,5 +1,4 @@
 // @flow
-
 import React from 'react';
 import {
   View,
@@ -13,10 +12,11 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions as NavigationActions } from 'react-native-router-flux';
+import * as Animatable from 'react-native-animatable';
 import I18n from 'react-native-i18n';
 
 import { Images, Metrics } from '../../Themes';
-import LoginActions from '../../Redux/LoginRedux';
+import LoginActions from '../../Redux/auth/LoginRedux';
 import Styles from './styles';
 
 type LoginScreenProps = {
@@ -45,10 +45,10 @@ class LoginScreen extends React.Component {
   constructor (props: LoginScreenProps) {
     super(props)
     this.state = {
-      username: 'reactnative@infinite.red',
-      password: 'password',
+      username: '',
+      password: '',
       visibleHeight: Metrics.screenHeight,
-      topLogo: { width: Metrics.screenWidth }
+      topLogo: { width: 150 }
     }
     this.isAttempting = false
   }
@@ -57,7 +57,7 @@ class LoginScreen extends React.Component {
     this.forceUpdate()
     // Did the login attempt complete?
     if (this.isAttempting && !newProps.fetching) {
-      NavigationActions.pop()
+      NavigationActions.pop();
     }
   }
 
@@ -88,15 +88,16 @@ class LoginScreen extends React.Component {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
     this.setState({
       visibleHeight: Metrics.screenHeight,
-      topLogo: {width: Metrics.screenWidth}
+      topLogo: {width: 150}
     })
   }
 
   handlePressLogin = () => {
-    const { username, password } = this.state
-    this.isAttempting = true
-    // attempt a login - a saga is listening to pick it up from here.
-    this.props.attemptLogin(username, password)
+    // const { username, password } = this.state
+    // this.isAttempting = true
+    // // attempt a login - a saga is listening to pick it up from here.
+    // this.props.attemptLogin(username, password)
+    NavigationActions.pop();
   }
 
   handleChangeUsername = (text) => {
@@ -107,13 +108,16 @@ class LoginScreen extends React.Component {
     this.setState({ password: text })
   }
 
-  render () {
+  render() {
     const { username, password } = this.state
     const { fetching } = this.props
     const editable = !fetching
     const textInputStyle = editable ? Styles.textInput : Styles.textInputReadonly
     return (
-      <ScrollView contentContainerStyle={{justifyContent: 'center'}} style={[Styles.container, {height: this.state.visibleHeight}]} keyboardShouldPersistTaps>
+      <ScrollView
+        contentContainerStyle={{ justifyContent: 'center' }}
+        style={[Styles.container]}
+        keyboardShouldPersistTaps>
         <Image source={Images.logo} style={[Styles.topLogo, this.state.topLogo]} />
         <View style={Styles.form}>
           <View style={Styles.row}>
@@ -132,7 +136,6 @@ class LoginScreen extends React.Component {
               onSubmitEditing={() => this.refs.password.focus()}
               placeholder={I18n.t('username')} />
           </View>
-
           <View style={Styles.row}>
             <Text style={Styles.rowLabel}>{I18n.t('password')}</Text>
             <TextInput
@@ -154,17 +157,16 @@ class LoginScreen extends React.Component {
           <View style={[Styles.loginRow]}>
             <TouchableOpacity style={Styles.loginButtonWrapper} onPress={this.handlePressLogin}>
               <View style={Styles.loginButton}>
-                <Text style={Styles.loginText}>{I18n.t('signIn')}</Text>
+                <Text style={Styles.loginText}>Sign In</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity style={Styles.loginButtonWrapper} onPress={NavigationActions.pop}>
-              <View style={Styles.loginButton}>
-                <Text style={Styles.loginText}>{I18n.t('cancel')}</Text>
+              <View style={[Styles.loginButton, Styles.facebookButton]}>
+                <Text style={Styles.loginText}>Login with Facebook</Text>
               </View>
             </TouchableOpacity>
           </View>
         </View>
-
       </ScrollView>
     )
   }
@@ -173,7 +175,7 @@ class LoginScreen extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    fetching: state.login.fetching
+    fetching: state.auth.fetching,
   }
 }
 

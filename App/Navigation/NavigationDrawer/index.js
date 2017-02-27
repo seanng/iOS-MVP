@@ -11,6 +11,15 @@ import Styles from './styles';
 /* *******************
 * Documentation: https://github.com/root-two/react-native-drawer
 ********************/
+const mapStateToProps = (state) => {
+  return {
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+  }
+}
 
 class NavigationDrawer extends Component {
   render () {
@@ -40,17 +49,7 @@ class NavigationDrawer extends Component {
 }
 
 NavigationDrawer.propTypes = {
-  navigationState: PropTypes.object
+  navigationState: PropTypes.object,
 }
 
-const mapStateToProps = (state) => {
-  return {
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(NavigationDrawer)
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationDrawer);

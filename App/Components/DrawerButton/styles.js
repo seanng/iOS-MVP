@@ -5,7 +5,8 @@ import { Metrics, Colors, Fonts } from '../../Themes';
 export default StyleSheet.create({
   text: {
     ...Fonts.style.h5,
-    color: Colors.snow,
+    fontWeight: '200',
+    color: Colors.black,
     marginVertical: Metrics.baseMargin
-  }
+  },
 });
