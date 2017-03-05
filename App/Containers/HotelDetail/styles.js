@@ -52,7 +52,7 @@ export default StyleSheet.create({
     marginBottom: Metrics.smallMargin,
   },
   mapContainer: {
-    height: Metrics.screenWidth,
+    height: Metrics.screenHeight - 100 - (Metrics.screenWidth - 200) - 65,
     width: Metrics.screenWidth,
     justifyContent: 'flex-end',
     alignItems: 'center',
@@ -76,7 +76,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderTopWidth: 1,
-    borderColor: Colors.black,
+    borderColor: Colors.coal,
   },
   borderRight: {
     borderRightWidth: 1,

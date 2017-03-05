@@ -6,8 +6,6 @@ import {
 import { connect } from 'react-redux';
 
 import Homepage from './Homepage';
-// import LoginScreen from '../Login';
-
 import styles from './styles';
 
 const propTypes = {
