@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions as NavigationActions } from 'react-native-router-flux';
+import moment from 'moment';
 
 import styles from './styles';
 
@@ -24,7 +25,7 @@ class BookingStatus extends React.Component {
           </View>
           <View style={styles.detailWrapper}>
             <Text style={styles.title}>COMPLIMENTARY TRAVEL TIME ENDS AT:</Text>
-            <Text>{JSON.stringify(bookingDetail.time)}</Text>
+            <Text style={styles.time}>{moment(bookingDetail.time).add(30, 'm').format('LT')}</Text>
             <Text style={styles.content}>You can pick up your key at the front desk now.</Text>
             <Text style={styles.content}>You'll start getting charged when you pick up your key or at 9:40pm, which ever comes firt.</Text>
             <Text style={styles.content}>A government issued photo ID is required.</Text>

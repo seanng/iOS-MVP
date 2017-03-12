@@ -39,16 +39,19 @@ export default StyleSheet.create({
     fontWeight: '400',
     fontSize: 17,
     color: Colors.coal,
+    marginVertical: Metrics.baseMargin,
   },
   time: {
     fontWeight: '500',
     fontSize: 20,
     color: Colors.coal,
+    marginVertical: Metrics.baseMargin,
   },
   content: {
     fontWeight: '200',
     fontSize: 15,
     color: Colors.coal,
+    marginVertical: Metrics.baseMargin,
   },
   bookButtonView: {
     height: 50,
