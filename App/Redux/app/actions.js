@@ -8,9 +8,9 @@ export function changeRoute(route) {
   };
 }
 
-export function updateUserStatus(userStatus) {
+export function userBookedRoom(roomBooked) {
   return {
     type: UPDATE_USER_STATUS,
-    userStatus,
+    roomBooked,
   };
 }

@@ -28,7 +28,7 @@ class NavigationRouter extends Component {
                 <Scene initial key="homeContainer" component={HomeContainer} title="Haven" renderLeftButton={NavItems.hamburgerButton} />
               </Scene>
             </Scene>
-            <Scene key="hotelDetail" component={HotelDetail} />
+            <Scene key="hotelDetail" component={HotelDetail} navigationBarStyle={Styles.navBar} titleStyle={Styles.title} leftButtonIconStyle={Styles.leftButton} />
           </Scene>
           <Scene key="login" component={Login} hideNavBar direction="vertical" />
         </Scene>
